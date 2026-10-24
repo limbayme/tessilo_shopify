@@ -1,0 +1,24 @@
+{% if section.settings.layout == 'story' %}
+{{ 'tessilo-story.css' | asset_url | stylesheet_tag }}
+<section class="tessilo-story-preview" id="OurStory" aria-labelledby="TessiloStoryTitle">
+  <div class="tessilo-story-preview__top"><h2 id="TessiloStoryTitle">From the first light.<br>To the last page.</h2><div><p>A slow morning. A little time to yourself. An evening you wish would last. Comfort is the thread that runs through your day.</p>{% if pages['our-story'] != blank %}<a class="tessilo-text-link" href="{{ pages['our-story'].url }}">The story behind our comfort</a>{% else %}<a class="tessilo-text-link" href="{{ routes.root_url }}pages/contact">Tell us what home means to you</a>{% endif %}</div></div>
+  <div class="tessilo-story-preview__images"><figure class="tessilo-story-preview__wide"><div class="tessilo-story-frame"><img src="{{ 'tessilo-story-arrival.jpg' | asset_url }}" width="1536" height="1024" alt="Putting down a coat and coming home — Tessilo concept" loading="lazy"></div><figcaption>Come home to a slower rhythm.</figcaption></figure><figure class="tessilo-story-preview__detail"><div class="tessilo-story-frame"><img src="{{ 'tessilo-concept-ritual.jpg' | asset_url }}" width="1024" height="1536" alt="An open book and soft textures — Tessilo concept" loading="lazy"></div><figcaption>One more page. A little longer here.</figcaption></figure></div>
+</section>
+{% elsif section.settings.layout == 'consultation' %}
+<div class="tessilo-consultation-journey" data-consultation-journey>
+<section class="tessilo-consultation page-width" id="CustomComfort">
+  <div class="tessilo-consultation__heading"><div class="tessilo-ad-stack">
+    <div data-ad-heading><h2>Make room<br>for yourself.</h2><p class="tessilo-consultation__invitation">Your pause. Your place.</p></div>
+    <div data-ad-heading hidden><h2>Stay a<br>little longer.</h2><p class="tessilo-consultation__invitation">Good company. Great comfort.</p></div>
+    <div data-ad-heading hidden><h2>Your sofa.<br>Your kind of life.</h2><p class="tessilo-consultation__invitation">Let’s make it personal.</p></div>
+  </div></div>
+  <div class="tessilo-consultation__body"><div class="tessilo-ad-stack tessilo-ad-stack--body">
+    <div data-ad-copy><p>A quiet corner. An open book. A seat that invites you to slow down.</p><p>Tell us how you like to unwind. We’ll help you explore the right piece for your space.</p></div>
+    <div data-ad-copy hidden><p>Long conversations. Unhurried weekends. Room for the people you love.</p><p>From a cosy apartment to a place for everyone, let’s talk about the way you live.</p></div>
+    <div data-ad-copy hidden><p>A different arrangement? A particular finish? Make space for what matters to you.</p><p>Share your plans. We’ll confirm available options, pricing and lead times before you order.</p></div>
+  </div><a class="tessilo-consultation__cta" href="{{ routes.root_url }}pages/contact"><span>Start a conversation</span><span class="tessilo-consultation__arrow" aria-hidden="true">{{ 'icon-arrow.svg' | inline_asset_content }}</span></a></div>
+</section></div>
+{% else %}
+<section class="tessilo-journal page-width" id="ComfortGuide"><header><h2>Start with how you live.</h2></header><div class="tessilo-journal__grid"><article><span>Space</span><h3>Give the room room.</h3><p>Measure the footprint, then think about the space around it. Leave a clear route through the room.</p></article><article><span>Shape</span><h3>Find your place.</h3><p>A sectional for gathering. A lounge chair for a quieter corner. A chaise for putting your feet up.</p></article><article><span>Feeling</span><h3>Look a little closer.</h3><p>Use the detailed product images to compare textures and proportions. Ask us about anything you need to confirm.</p></article></div></section>
+{% endif %}
+{% schema %}{"name":"Tessilo brand world","settings":[{"type":"select","id":"layout","label":"Chapter","options":[{"value":"story","label":"Brand story"},{"value":"guide","label":"Comfort guide"},{"value":"consultation","label":"Custom consultation"}],"default":"story"}],"presets":[{"name":"Tessilo brand world"}]}{% endschema %}

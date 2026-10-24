@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "cover": {
+      "type": "tessilo-setting-hero",
+      "settings": {
+        "product": "tessilo-w3975s00042",
+        "heading": "The room we come back to.",
+        "description": "For conversations that run late and evenings with everyone together."
+      }
+    },
+    "scenes": {
+      "type": "tessilo-scenes",
+      "settings": {},
+      "blocks": {
+        "together": {
+          "type": "scene",
+          "settings": {
+            "heading": "Room for everyone",
+            "label": "Living room",
+            "description": "Sectionals and sofas for evenings together.",
+            "products": [
+              "tessilo-w3975s00042",
+              "tessilo-w3975s00183",
+              "tessilo-w3975p501411",
+              "tessilo-w3975p519736"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "together"
+      ]
+    },
+    "guide": {
+      "type": "tessilo-brand-world",
+      "settings": {
+        "layout": "guide"
+      }
+    },
+    "consultation": {
+      "type": "tessilo-brand-world",
+      "settings": {
+        "layout": "consultation"
+      }
+    },
+    "room-notes": {
+      "type": "tessilo-room-notes",
+      "settings": {
+        "product": "tessilo-w3975s00183",
+        "heading": "More room for being together.",
+        "description": "Build the room around the way you spend time together. A generous sectional gives everyone a place to settle in.",
+        "tip_one": "Start with the conversation",
+        "body_one": "Face your seating towards the people in the room. Keep a table within reach for a book or a cup of tea.",
+        "tip_two": "Leave a little breathing room",
+        "body_two": "Measure your chosen configuration and leave clear routes around it. A comfortable room should be easy to move through."
+      }
+    }
+  },
+  "order": [
+    "cover",
+    "scenes",
+    "room-notes",
+    "guide",
+    "consultation"
+  ]
+}

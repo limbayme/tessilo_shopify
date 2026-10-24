@@ -1,0 +1,65 @@
+{
+  "sections": {
+    "cover": {
+      "type": "tessilo-setting-hero",
+      "settings": {
+        "product": "tessilo-w3975s00121",
+        "heading": "Let the day slow down.",
+        "description": "Lounge seating and room to stretch out when the day is done."
+      }
+    },
+    "scenes": {
+      "type": "tessilo-scenes",
+      "settings": {},
+      "blocks": {
+        "relax": {
+          "type": "scene",
+          "settings": {
+            "heading": "Feet up. Day done.",
+            "label": "Time to unwind",
+            "description": "Lounge seating, a chaise and an ottoman to stretch out.",
+            "products": [
+              "tessilo-w3975s00121",
+              "tessilo-w5885p517229",
+              "tessilo-w3975p510434"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "relax"
+      ]
+    },
+    "guide": {
+      "type": "tessilo-brand-world",
+      "settings": {
+        "layout": "guide"
+      }
+    },
+    "consultation": {
+      "type": "tessilo-brand-world",
+      "settings": {
+        "layout": "consultation"
+      }
+    },
+    "room-notes": {
+      "type": "tessilo-room-notes",
+      "settings": {
+        "product": "tessilo-w5885p517229",
+        "heading": "Make an evening of doing less.",
+        "description": "Create a place to stretch out after the day. Lounge seating turns an overlooked space into somewhere you want to stay.",
+        "tip_one": "Think beyond the sofa",
+        "body_one": "A chaise can become its own retreat. Position it where you can enjoy the room and still reach a side table.",
+        "tip_two": "Choose your kind of quiet",
+        "body_two": "Bring in a soft throw, warm lighting and the things you enjoy. Check the piece\u2019s dimensions against your room and delivery route."
+      }
+    }
+  },
+  "order": [
+    "cover",
+    "scenes",
+    "room-notes",
+    "guide",
+    "consultation"
+  ]
+}

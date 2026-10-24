@@ -1,0 +1,6 @@
+{% assign piece = section.settings.product %}{% assign picture = piece.featured_image %}
+<section class="tessilo-room-notes page-width">
+  <div class="tessilo-room-notes__photo">{{ picture | image_url: width: 1200 | image_tag: widths: '500, 800, 1200', sizes: '(min-width: 750px) 50vw, 100vw', loading: 'lazy' }}</div>
+  <div class="tessilo-room-notes__copy"><h2>{{ section.settings.heading | escape }}</h2><p>{{ section.settings.description | escape }}</p><dl><dt>{{ section.settings.tip_one | escape }}</dt><dd>{{ section.settings.body_one | escape }}</dd><dt>{{ section.settings.tip_two | escape }}</dt><dd>{{ section.settings.body_two | escape }}</dd></dl><a class="tessilo-text-link" href="{{ piece.url }}">Explore this piece {{ 'icon-arrow.svg' | inline_asset_content }}</a></div>
+</section>
+{% schema %}{"name":"Tessilo room notes","settings":[{"type":"product","id":"product","label":"Featured piece"},{"type":"text","id":"heading","label":"Heading"},{"type":"textarea","id":"description","label":"Description"},{"type":"text","id":"tip_one","label":"First room tip"},{"type":"textarea","id":"body_one","label":"First tip detail"},{"type":"text","id":"tip_two","label":"Second room tip"},{"type":"textarea","id":"body_two","label":"Second tip detail"}],"presets":[{"name":"Tessilo room notes"}]}{% endschema %}

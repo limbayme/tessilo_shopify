@@ -1,0 +1,15 @@
+{{ 'tessilo-media-switch.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tessilo-media-switch.js' | asset_url }}" defer></script>
+<tessilo-media-switch data-section="{{ section.id }}" data-sku="{{ product.selected_or_first_available_variant.sku | escape }}" data-source="{{ 'tessilo-dimensions-data.json' | asset_url }}">
+  <div class="tessilo-media-switch__tabs" role="tablist" aria-label="Product view" hidden>
+    <button type="button" role="tab" id="PhotoTab-{{ section.id }}" aria-controls="PhotoPanel-{{ section.id }}" aria-selected="true" tabindex="0" data-media-photo>Photos</button>
+    <button type="button" role="tab" id="ModelTab-{{ section.id }}" aria-controls="ModelPanel-{{ section.id }}" aria-selected="false" tabindex="-1" data-media-model>3D view</button>
+  </div>
+  <p class="tessilo-media-switch__status" role="status" data-media-status hidden></p>
+  <div id="PhotoPanel-{{ section.id }}" data-photo-panel>
+    {% render 'product-media-gallery', variant_images: variant_images, limit: 1 %}
+  </div>
+  <div id="ModelPanel-{{ section.id }}" data-model-panel hidden>
+    {% render 'tessilo-dimensions-3d', product: product, embed: true %}
+  </div>
+</tessilo-media-switch>

@@ -1,0 +1,30 @@
+<section class="tessilo-scenes tessilo-scenes--landing page-width" id="TessiloScenes" aria-labelledby="ScenesHeading-{{ section.id }}" data-tessilo-scenes>
+  <h2 class="tessilo-scenes__title" id="ScenesHeading-{{ section.id }}">Pieces for this setting</h2>
+  <nav class="tessilo-scenes__nav" aria-label="Shop by setting">
+    {% for block in section.blocks %}<a href="#Scene-{{ section.id }}-{{ block.id }}" data-scene-link>{{ block.settings.label | escape }}</a>{% endfor %}
+  </nav>
+  {% for block in section.blocks %}
+    <div class="tessilo-scene" id="Scene-{{ section.id }}-{{ block.id }}" {{ block.shopify_attributes }}>
+      <h3>{{ block.settings.heading | escape }}</h3>
+      <p class="tessilo-scene__intro">{{ block.settings.description | escape }}</p>
+      <div class="tessilo-scene__grid">
+        {% for product in block.settings.products %}
+          <article class="tessilo-scene__product">
+            <a href="{{ product.url }}" class="tessilo-scene__photo" aria-label="{{ product.title | escape }}">
+              {{ product.featured_image | image_url: width: 900 | image_tag: widths: '240, 360, 540, 720, 900', sizes: '(min-width: 990px) 23vw, 45vw', loading: 'lazy' }}
+            </a>
+            <h4><a href="{{ product.url }}">{{ product.title | replace: ' — ', ' · ' | escape }}</a></h4>
+            <p class="tessilo-scene__price">{% render 'tessilo-money', amount: product.price %}{% unless product.available %} · Sold out{% endunless %}</p>
+            <a class="tessilo-scene__shop" href="{{ product.url }}">View details<span class="visually-hidden">: {{ product.title | escape }}</span></a>
+            <a class="tessilo-card-rfq" href="{{ product.url }}#TessiloRFQ">Custom / bulk enquiry</a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+  <a class="tessilo-text-link tessilo-scenes__all" href="{{ routes.all_products_collection_url }}">Shop all furniture</a>
+</section>
+<script src="{{ 'tessilo-scenes.js' | asset_url }}" defer="defer"></script>
+{% schema %}
+{"name":"Tessilo shop by setting","settings":[],"max_blocks":4,"blocks":[{"type":"scene","name":"Setting","settings":[{"type":"text","id":"label","label":"Navigation label"},{"type":"text","id":"heading","label":"Heading"},{"type":"textarea","id":"description","label":"Description"},{"type":"product_list","id":"products","label":"Products","limit":8}]}],"presets":[{"name":"Tessilo shop by setting"}]}
+{% endschema %}

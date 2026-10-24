@@ -1,0 +1,15 @@
+{
+  "name": "Tessilo footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "tessilo-footer",
+      "settings": {
+        "payment_enable": true
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": {"type":"tessilo-story-page","settings":{}}
+  },
+  "order":["main"]
+}

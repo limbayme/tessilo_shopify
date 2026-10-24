@@ -1,0 +1,22 @@
+{{ 'tessilo-footer.css' | asset_url | stylesheet_tag }}
+<footer class="tessilo-footer">
+  <div class="tessilo-footer__invitation">
+    <div class="page-width"><div><h2>A little more room for you.</h2><p>Tell us about your home. Let’s find your kind of comfort.</p></div><a href="{{ routes.root_url }}pages/contact">Start a conversation<span aria-hidden="true">{{ 'icon-arrow.svg' | inline_asset_content }}</span></a></div>
+  </div>
+  <div class="tessilo-footer__main page-width">
+    <div class="tessilo-footer__brand">
+      <a class="tessilo-footer__logo" href="{{ routes.root_url }}" aria-label="Tessilo home">{% render 'tessilo-brand' %}</a>
+      <p>The home of comfort &amp; style.</p><p>For slow mornings, long conversations<br>and the simple pleasure of coming home.</p>
+      {% render 'tessilo-social-links', placement: 'footer' %}
+    </div>
+    <nav aria-labelledby="FooterSpaces-{{ section.id }}"><h3 id="FooterSpaces-{{ section.id }}">Find your space</h3><ul><li><a href="{{ routes.all_products_collection_url }}">Shop all furniture</a></li><li><a href="{{ routes.all_products_collection_url }}?view=living-room">Living room</a></li><li><a href="{{ routes.all_products_collection_url }}?view=reading-corner">Reading corner</a></li><li><a href="{{ routes.all_products_collection_url }}?view=time-to-unwind">Time to unwind</a></li></ul></nav>
+    <nav aria-labelledby="FooterBrand-{{ section.id }}"><h3 id="FooterBrand-{{ section.id }}">The Tessilo way</h3><ul><li><a href="{{ routes.root_url }}#OurStory">Our story</a></li><li><a href="{{ routes.root_url }}#CustomComfort">Your sofa, your way</a></li><li><a href="{{ routes.root_url }}#ComfortGuide">Choosing your comfort</a></li><li><a href="{{ routes.root_url }}pages/contact?type=wholesale#TessiloRFQ">Batch &amp; trade inquiry</a></li></ul></nav>
+    <nav aria-labelledby="FooterHelp-{{ section.id }}"><h3 id="FooterHelp-{{ section.id }}">Here to help</h3><ul><li><a href="{{ routes.root_url }}pages/contact">Contact Tessilo</a></li>{% if shop.shipping_policy.body != blank %}<li><a href="{{ shop.shipping_policy.url }}">Shipping &amp; delivery</a></li>{% endif %}{% if shop.refund_policy.body != blank %}<li><a href="{{ shop.refund_policy.url }}">Returns &amp; refunds</a></li>{% endif %}{% if shop.customer_accounts_enabled %}<li><a href="{{ routes.account_url }}">Your account</a></li>{% endif %}</ul><p class="tessilo-footer__help-note">Questions about size, configuration or your room? We’re here to talk it through.</p></nav>
+  </div>
+  <div class="tessilo-footer__bottom page-width">
+    <div class="tessilo-footer__legal"><span>&copy; {{ 'now' | date: '%Y' }} Tessilo Global Home</span><nav aria-label="Legal information">{% for policy in shop.policies %}{% if policy.body != blank %}<a href="{{ policy.url }}">{{ policy.title | escape }}</a>{% endif %}{% endfor %}</nav></div>
+    {% if section.settings.payment_enable and shop.enabled_payment_types != empty %}<div class="tessilo-footer__payments"><span class="visually-hidden">Payment methods</span><ul role="list">{% for type in shop.enabled_payment_types %}<li>{{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}</li>{% endfor %}</ul></div>{% endif %}
+    {% if localization.available_countries.size > 1 or localization.available_languages.size > 1 %}<div class="tessilo-footer__localization">{% form 'localization', id: 'TessiloFooterLocalization' %}{% if localization.available_countries.size > 1 %}<label for="FooterCountry">Country / currency</label><select id="FooterCountry" name="country_code">{% for country in localization.available_countries %}<option value="{{ country.iso_code }}" {% if country.iso_code == localization.country.iso_code %}selected{% endif %}>{{ country.name | escape }} · {{ country.currency.iso_code }}</option>{% endfor %}</select>{% endif %}{% if localization.available_languages.size > 1 %}<label for="FooterLanguage">Language</label><select id="FooterLanguage" name="language_code">{% for language in localization.available_languages %}<option value="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}selected{% endif %}>{{ language.endonym_name | escape }}</option>{% endfor %}</select>{% endif %}<button type="submit">Update</button>{% endform %}</div>{% endif %}
+  </div>
+</footer>
+{% schema %}{"name":"Tessilo brand footer","settings":[{"type":"checkbox","id":"payment_enable","label":"Show available payment methods","default":true}],"enabled_on":{"groups":["footer"]},"presets":[{"name":"Tessilo brand footer"}]}{% endschema %}

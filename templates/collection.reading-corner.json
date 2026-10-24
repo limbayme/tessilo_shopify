@@ -1,0 +1,65 @@
+{
+  "sections": {
+    "cover": {
+      "type": "tessilo-setting-hero",
+      "settings": {
+        "product": "tessilo-w3975p530974",
+        "heading": "A corner of your own.",
+        "description": "A comfortable chair. A little daylight. Some time that is just yours."
+      }
+    },
+    "scenes": {
+      "type": "tessilo-scenes",
+      "settings": {},
+      "blocks": {
+        "reading": {
+          "type": "scene",
+          "settings": {
+            "heading": "Your own corner",
+            "label": "Reading corner",
+            "description": "A chair for your book, your coffee, your afternoon.",
+            "products": [
+              "tessilo-w3975p437949",
+              "tessilo-w3975p440925",
+              "tessilo-w3975p530974"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "reading"
+      ]
+    },
+    "guide": {
+      "type": "tessilo-brand-world",
+      "settings": {
+        "layout": "guide"
+      }
+    },
+    "consultation": {
+      "type": "tessilo-brand-world",
+      "settings": {
+        "layout": "consultation"
+      }
+    },
+    "room-notes": {
+      "type": "tessilo-room-notes",
+      "settings": {
+        "product": "tessilo-w3975p437949",
+        "heading": "Your smallest escape.",
+        "description": "You do not need a whole room to make a place of your own. Begin with a chair you look forward to sitting in.",
+        "tip_one": "Follow the light",
+        "body_one": "Choose a position near daylight and add a reading lamp for evenings. Keep your book and a drink close by.",
+        "tip_two": "Give the chair a little space",
+        "body_two": "Allow room to sit down, stretch your legs and move around the chair. Check the dimensions before choosing your spot."
+      }
+    }
+  },
+  "order": [
+    "cover",
+    "scenes",
+    "room-notes",
+    "guide",
+    "consultation"
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "version": 2,
+  "unit": "cm",
+  "disclaimer": "Dimension reference only. Shape, upholstery and construction are illustrative; confirm measurements before ordering.",
+  "products": [
+    {
+      "sku": "W3975P519736",
+      "kind": "sectional",
+      "width": 246.126,
+      "depth": 152.908,
+      "height": 78.994,
+      "seatHeight": 40.894,
+      "color": "#75644e",
+      "source": "product-assets/W3975P519736/15c11ca8f44c08baa03af5a9642a304b.jpg",
+      "mediaPosition": 2,
+      "status": "source-labels-transcribed",
+      "notes": [
+        "Source gives inches only; cm values are converted using 2.54.",
+        "Arm thickness follows the printed 8.3 inch measurement. Cushion contours and seams are illustrative."
+      ],
+      "chaiseWidth": 87.884,
+      "bodyDepth": 87.122,
+      "armHeight": 58.928,
+      "verified": true,
+      "reviewStatus": "disabled-pending-dimension-and-visual-review",
+      "armThickness": 21.082,
+      "seatDepth": 68.072,
+      "reviewedAs": "Source-based size and layout reference; upholstery and unlabelled contours illustrative"
+    },
+    {
+      "sku": "W3975P501411",
+      "kind": "sectional",
+      "width": 216,
+      "depth": 136,
+      "height": 79,
+      "seatHeight": 41,
+      "color": "#333432",
+      "source": "product-assets/W3975P501411/2656L.jpg",
+      "mediaPosition": 3,
+      "status": "source-labels-transcribed",
+      "notes": [
+        "Centimetre labels take precedence over rounded inch equivalents.",
+        "Cushion contours and seams are illustrative."
+      ],
+      "chaiseWidth": 80,
+      "bodyDepth": 87,
+      "armHeight": 59,
+      "verified": true,
+      "reviewStatus": "disabled-pending-dimension-and-visual-review",
+      "armThickness": 21,
+      "seatDepth": 68,
+      "chaiseSeatDepth": 115,
+      "reviewedAs": "Source-based size and layout reference; upholstery and unlabelled contours illustrative"
+    },
+    {
+      "sku": "W3975P510434",
+      "kind": "ottoman",
+      "width": 93.98,
+      "depth": 73.66,
+      "height": 41.91,
+      "seatHeight": 41.91,
+      "color": "#343736",
+      "source": "product-assets/W3975P510434/373-001.jpg",
+      "mediaPosition": 3,
+      "status": "source-labels-transcribed",
+      "notes": [
+        "Source gives 37 × 29 × 16.5 inches; converted to cm.",
+        "Corners and upholstery finish are illustrative."
+      ],
+      "verified": true,
+      "reviewStatus": "disabled-pending-dimension-and-visual-review",
+      "reviewedAs": "Source-based size and layout reference; upholstery and unlabelled contours illustrative"
+    },
+    {
+      "sku": "W3975P437949",
+      "kind": "lounge",
+      "width": 86,
+      "depth": 97,
+      "height": 70,
+      "seatHeight": 38,
+      "color": "#d2c1a0",
+      "source": "product-assets/W3975P437949/605.jpg",
+      "mediaPosition": 5,
+      "status": "source-labels-transcribed",
+      "notes": [
+        "Depth is labelled 97 cm / 38.9 inches; these disagree by 1.8 cm. The displayed cm label is used pending supplier confirmation.",
+        "Arm contours, tufting and upholstery are illustrative."
+      ],
+      "verified": true,
+      "reviewStatus": "disabled-source-conflict",
+      "reviewedAs": "Source-based size and layout reference; upholstery and unlabelled contours illustrative"
+    },
+    {
+      "sku": "W3975P440925",
+      "kind": "armless",
+      "width": 80,
+      "depth": 80,
+      "height": 75,
+      "seatHeight": 40,
+      "color": "#c99e97",
+      "source": "product-assets/W3975P440925/ede99f60117cdff05ad1f7371b3ab6a8.jpg",
+      "mediaPosition": 5,
+      "status": "source-labels-transcribed",
+      "notes": [
+        "Closed chair configuration only. Open bed dimensions are not supplied.",
+        "Back angle and cushion construction are illustrative."
+      ],
+      "verified": true,
+      "reviewStatus": "disabled-pending-dimension-and-visual-review",
+      "reviewedAs": "Source-based size and layout reference; upholstery and unlabelled contours illustrative"
+    },
+    {
+      "sku": "W3975P530974",
+      "kind": "round-lounge",
+      "width": 90,
+      "depth": 100,
+      "height": 90,
+      "seatHeight": 38,
+      "color": "#b56832",
+      "source": "product-assets/W3975P530974/2680-SIZE(1).png",
+      "mediaPosition": 3,
+      "status": "height-confirmed-by-brand",
+      "notes": [
+        "Overall height is 90 cm, confirmed by the brand owner on 24 October 2026. The printed 27.5 inch height is superseded.",
+        "Seat-width label conflicts: 27 inches and 38 cm. The seat opening is illustrative, not a confirmed dimension.",
+        "Depth is printed as 100 cm / 40 inches. The centimetre value is used; rounded inch text is not an independent measurement.",
+        "The rounded shell contour and upholstery surface are illustrative."
+      ],
+      "verified": true,
+      "reviewStatus": "pending-visual-review",
+      "heightEvidence": {
+        "valueCm": 90,
+        "source": "User confirmation in Tessilo task",
+        "date": "2026-10-24",
+        "supersedes": "Conflicting 27.5 inch printed height label"
+      },
+      "reviewedAs": "Source-based size and layout reference; upholstery and unlabelled contours illustrative"
+    },
+    {
+      "sku": "W3975S00121",
+      "kind": "armless-sofa",
+      "width": 224.79,
+      "depth": 102.108,
+      "height": 70.104,
+      "seatHeight": 38.1,
+      "color": "#796551",
+      "source": "product-assets/W3975S00121/2aa84a79ec3863fd1d1dbf346ce86126.png",
+      "mediaPosition": 3,
+      "status": "source-labels-transcribed",
+      "notes": [
+        "Source gives 88.5 × 40.2 × 27.6 inches; converted to cm.",
+        "Module widths are 35.5 and 53 inches. Cushion contours are illustrative."
+      ],
+      "moduleWidths": [
+        90.17,
+        134.62
+      ],
+      "verified": true,
+      "reviewStatus": "disabled-pending-dimension-and-visual-review",
+      "reviewedAs": "Source-based size and layout reference; upholstery and unlabelled contours illustrative"
+    },
+    {
+      "sku": "W3975S00183",
+      "kind": "u-sectional",
+      "width": 328,
+      "depth": 164,
+      "height": null,
+      "seatHeight": 42,
+      "color": "#cbbda5",
+      "source": "product-assets/W3975S00183/cbd75afa7cd246d274832e1533f17e73.jpg",
+      "mediaPosition": 7,
+      "status": "partial-dimensions",
+      "notes": [
+        "62 cm is the arm height; overall back height is not supplied.",
+        "90 cm and 74 cm internal measurements do not establish complete module geometry.",
+        "Back profile and internal module splits are visually estimated. Only width 328 cm, maximum depth 164 cm, arm height 62 cm and seat height 42 cm are source-labelled. No overall-height annotation is shown.",
+        "The right-hand front width is labelled 90 cm. A 16 cm arm and matching 90 cm left wing are derived from the 74 cm seat/module labels and four visible modules; these internal interpretations still require confirmation.",
+        "Source layout has the long left chaise and left rear arm; the right extension is shorter and open-sided. Right extension depth is a visual estimate, not a source dimension."
+      ],
+      "verified": true,
+      "reviewStatus": "disabled-pending-dimension-and-visual-review",
+      "shapeHeightEstimate": 82,
+      "armHeight": 62,
+      "rightChaiseWidth": 90,
+      "seatModuleWidth": 74,
+      "reviewedAs": "Source-based size and layout reference; upholstery and unlabelled contours illustrative"
+    },
+    {
+      "sku": "W3975S00042",
+      "kind": "unavailable",
+      "width": null,
+      "depth": null,
+      "height": null,
+      "seatHeight": null,
+      "color": "#e3dece",
+      "source": null,
+      "mediaPosition": null,
+      "status": "missing-dimensions",
+      "notes": [
+        "No dimensions image was supplied among this SKU’s five gallery images. No scaled model is shown."
+      ],
+      "verified": false,
+      "reviewStatus": "disabled-pending-dimension-and-visual-review"
+    },
+    {
+      "sku": "W5885P517229",
+      "kind": "chaise",
+      "width": 120,
+      "depth": 165,
+      "height": null,
+      "seatHeight": 42,
+      "color": "#e0d8c7",
+      "source": "product-assets/W5885P517229/208e8ae460f4a21150581e26fc7cf1eb.jpg",
+      "mediaPosition": 2,
+      "status": "partial-dimensions",
+      "notes": [
+        "The 87 cm arrow follows the side pouch in the depth direction: it is rear arm length, not inner seat width.",
+        "Arms are 21 cm thick, 87 cm long and 52 cm high; calculated inner span is 120 − 2 × 21 = 78 cm. Back cushion width is labelled 76 cm.",
+        "The 60 cm rear arrow does not establish the upper cushion tip height. Back profile remains illustrative; overall height is not labelled.",
+        "Overall footprint 120 × 165 cm and seat height 42 cm follow the source diagram."
+      ],
+      "verified": true,
+      "reviewStatus": "disabled-pending-dimension-and-visual-review",
+      "shapeHeightEstimate": 70,
+      "armHeight": 52,
+      "armThickness": 21,
+      "armDepth": 87,
+      "reviewedAs": "Source-based size and layout reference; upholstery and unlabelled contours illustrative"
+    }
+  ]
+}

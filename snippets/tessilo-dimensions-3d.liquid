@@ -1,0 +1,30 @@
+{%- liquid
+  assign dimension_sku = product.selected_or_first_available_variant.sku
+  assign dimension_index = -1
+  case dimension_sku
+    when 'W3975P519736', 'W5885P517229'
+      assign dimension_index = 1
+    when 'W3975P501411', 'W3975P510434', 'W3975P530974', 'W3975S00121'
+      assign dimension_index = 2
+    when 'W3975P437949', 'W3975P440925'
+      assign dimension_index = 4
+    when 'W3975S00183'
+      assign dimension_index = 6
+  endcase
+-%}
+{% comment %}Render with product: product. Heavy Three.js code loads only after explicit user activation.{% endcomment %}
+{{ 'tessilo-dimensions-3d.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tessilo-dimensions-3d.js' | asset_url }}" defer="defer"></script>
+<tessilo-dimensions-3d {% if embed %}data-embed{% endif %} class="tessilo-3d" data-sku="{{ product.selected_or_first_available_variant.sku | escape }}" data-source="{{ 'tessilo-dimensions-data.json' | asset_url }}" data-module="{{ 'tessilo-dimensions-engine.js' | asset_url }}">
+  {% unless embed %}
+  {% comment %}No public 3D activation until individual models pass source and visual review.{% endcomment %}
+  <div class="tessilo-3d__intro"><div><p class="tessilo-3d__eyebrow">Plan your space</p><h2>Start with the right measurements.</h2><p data-status role="status">{% if dimension_index < 0 %}Ask us for confirmed measurements before planning your space.{% else %}Use the original dimension diagram below. We are checking the 3D reference against this piece before making it available.{% endif %}</p></div><a href="{{ routes.root_url }}pages/contact">Ask for measurements ↗</a></div>
+  {% endunless %}
+  <div data-viewer hidden>
+    <div class="tessilo-3d__tools" aria-label="3D controls"><div><button type="button" data-view="front">Front</button><button type="button" data-view="side">Side</button><button type="button" data-view="top">Top</button><button type="button" data-view="reset">Reset</button></div><div><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="out" aria-label="Zoom out">−</button><button type="button" data-unit="cm" aria-pressed="true">cm</button><button type="button" data-unit="in" aria-pressed="false">in</button>{% unless embed %}<button type="button" data-close>Close 3D</button>{% endunless %}</div></div>
+    <div data-stage class="tessilo-3d__stage"></div>
+    <p class="tessilo-3d__hint">Drag to rotate · Pinch to zoom · Keyboard: arrow keys to rotate, + / − to zoom</p>
+  </div>
+  <p class="tessilo-3d__disclaimer">{% if embed %}Source-based dimension reference. Upholstery, construction and surface appearance are illustrative. Confirm measurements before ordering.{% else %}Confirm measurements before ordering. A 3D preview is not currently available for this piece.{% endif %}</p><details class="tessilo-3d__evidence"><summary>Measurements &amp; source notes</summary><ul data-notes class="tessilo-3d__notes"></ul></details>
+  {% if dimension_index >= 0 and product.media[dimension_index] != blank %}<a class="tessilo-3d__source" href="{{ product.media[dimension_index].preview_image | image_url: width: 1600 }}" target="_blank" rel="noopener">View original dimensions image ↗</a>{% endif %}
+</tessilo-dimensions-3d>

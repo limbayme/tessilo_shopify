@@ -1,0 +1,14 @@
+{%- assign currency = cart.currency.iso_code | default: shop.currency -%}
+{%- assign formatted = amount | money_without_currency -%}
+<span class="tessilo-money">
+  <span class="visually-hidden">{{ amount | money_with_currency }}</span>
+  <span class="tessilo-money__visual" aria-hidden="true">
+    {%- if currency == 'USD' -%}
+      {%- assign parts = formatted | split: '.' -%}
+      <span class="tessilo-money__symbol">$</span><span class="tessilo-money__amount">{{ parts.first }}</span>{% if parts.size == 2 %}<span class="tessilo-money__fraction">.{{ parts.last }}</span>{% endif %}
+    {%- else -%}
+      <span class="tessilo-money__amount">{{ formatted }}</span>
+    {%- endif -%}
+    <span class="tessilo-money__currency">{{ currency }}</span>
+  </span>
+</span>

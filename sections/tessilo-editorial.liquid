@@ -1,0 +1,26 @@
+<div class="tessilo-day-journey" data-day-journey>
+<section class="tessilo-day-hero" aria-label="Comfort through your day">
+  <div class="tessilo-day-hero__image" aria-hidden="true">
+    <img src="{{ 'tessilo-cover-v2.png' | asset_url }}" width="1672" height="941" fetchpriority="high" alt="">
+    <div class="tessilo-day-hero__warm"></div>
+    <img class="tessilo-day-hero__night" src="{{ 'tessilo-hero-night.png' | asset_url }}" width="1672" height="941" loading="eager" alt="">
+  </div>
+  <div class="tessilo-day-hero__shade"></div>
+  <div class="tessilo-day-hero__content">
+    <p class="tessilo-day-hero__eyebrow">TESSILO · AT HOME, ALL DAY</p>
+    <div class="tessilo-day-hero__stories">
+      <div data-day-copy><p class="tessilo-day-hero__time">Morning</p><h1>A slower start.<br>A softer place.</h1><p>First light. Fresh coffee. A little room for yourself.</p></div>
+      <div data-day-copy hidden><p class="tessilo-day-hero__time">Afternoon</p><h2>Stay a little.<br>Then a little longer.</h2><p>Sunlight moves. Conversations linger. Comfort stays.</p></div>
+      <div data-day-copy hidden><p class="tessilo-day-hero__time">Evening</p><h2>The day winds down.<br>You settle in.</h2><p>From the first light to the last goodnight. At home with Tessilo.</p></div>
+    </div>
+    <a class="tessilo-day-hero__link" href="{{ routes.all_products_collection_url }}?view=living-room">Find your living room <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="tessilo-day-hero__footer"><span data-day-hint>Scroll to spend the day with us ↓</span><nav aria-label="Time of day"><button type="button" data-day-go="0" aria-pressed="true">Morning</button><button type="button" data-day-go="0.5" aria-pressed="false">Afternoon</button><button type="button" data-day-go="1" aria-pressed="false">Evening</button></nav><a href="#TessiloScenes">Explore the collection ↓</a></div>
+  <div class="tessilo-day-hero__progress" aria-hidden="true"></div>
+</section>
+</div>
+
+
+{% schema %}
+{"name":"Tessilo living campaign","settings":[],"max_blocks":5,"blocks":[{"type":"scene","name":"Scene","settings":[{"type":"text","id":"label","label":"Scene label"},{"type":"text","id":"heading","label":"Heading"},{"type":"textarea","id":"description","label":"Description"},{"type":"text","id":"cta","label":"Link label"},{"type":"text","id":"view","label":"Scene template"},{"type":"product","id":"product","label":"Lifestyle photo from product"},{"type":"image_picker","id":"image","label":"Optional campaign image"}]}],"presets":[{"name":"Tessilo living campaign"}]}
+{% endschema %}

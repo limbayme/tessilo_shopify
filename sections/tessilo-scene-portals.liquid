@@ -1,0 +1,23 @@
+<section class="tessilo-scenes tessilo-scenes--concepts page-width" id="TessiloScenes" aria-labelledby="SettingsTitle">
+  <h2 class="tessilo-scenes__title" id="SettingsTitle">Comfort, in your kind of space.</h2>
+  <div class="tessilo-scene-portals">
+  {% for block in section.blocks %}
+    {% assign item = block.settings.product %}
+    {% liquid
+      case block.settings.view
+        when 'living-room'
+          assign scene_asset = 'tessilo-cover-v2.png'
+        when 'reading-corner'
+          assign scene_asset = 'tessilo-concept-reading.jpg'
+        when 'time-to-unwind'
+          assign scene_asset = 'tessilo-concept-evening.jpg'
+      endcase
+    %}
+    <a class="tessilo-scene-portal" href="{{ routes.all_products_collection_url }}?view={{ block.settings.view | escape }}" {{ block.shopify_attributes }}>
+      <div class="tessilo-scene-portal__image"><img src="{{ scene_asset | asset_url }}" width="1536" height="1024" alt="{{ block.settings.label | escape }}" loading="lazy"></div>
+      <span class="tessilo-scene-portal__category">{{ block.settings.label | escape }}</span><h3>{{ block.settings.heading | escape }}</h3><p>{{ block.settings.description | escape }}</p><span class="tessilo-scene-portal__link">Explore {{ block.settings.label | downcase | escape }}</span>
+    </a>
+  {% endfor %}
+  </div>
+</section>
+{% schema %}{"name":"Tessilo scene entrances","settings":[],"max_blocks":3,"blocks":[{"type":"scene","name":"Scene","settings":[{"type":"product","id":"product","label":"Scene product"},{"type":"text","id":"heading","label":"Heading"},{"type":"text","id":"label","label":"Link label"},{"type":"textarea","id":"description","label":"Description"},{"type":"text","id":"view","label":"Collection template suffix"}]}],"presets":[{"name":"Tessilo scene entrances"}]}{% endschema %}

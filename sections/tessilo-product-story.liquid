@@ -1,0 +1,90 @@
+{% liquid
+  assign sku = product.selected_or_first_available_variant.sku | upcase
+  assign scene_position = 0
+  assign dimension_position = 0
+  assign detail_positions = ''
+  assign more_positions = ''
+  case sku
+    when 'W3975P519736'
+      assign scene_position = 3
+      assign dimension_position = 2
+      assign detail_positions = '4,5' | split: ','
+      assign more_positions = '6,7' | split: ','
+    when 'W3975P501411'
+      assign scene_position = 2
+      assign dimension_position = 3
+      assign detail_positions = '4,7' | split: ','
+      assign more_positions = '5,6,8' | split: ','
+    when 'W3975P510434'
+      assign scene_position = 6
+      assign dimension_position = 3
+      assign detail_positions = '4,5' | split: ','
+      assign more_positions = '2,7' | split: ','
+    when 'W3975P437949'
+      assign scene_position = 3
+      assign dimension_position = 5
+      assign detail_positions = '4,6' | split: ','
+      assign more_positions = '2,7' | split: ','
+    when 'W3975P440925'
+      assign scene_position = 3
+      assign dimension_position = 5
+      assign detail_positions = '4,6' | split: ','
+      assign more_positions = '2' | split: ','
+    when 'W3975P530974'
+      assign scene_position = 4
+      assign dimension_position = 3
+      assign detail_positions = '2,6' | split: ','
+      assign more_positions = '5' | split: ','
+    when 'W3975S00121'
+      assign scene_position = 2
+      assign dimension_position = 3
+      assign detail_positions = '4,5' | split: ','
+      assign more_positions = '6' | split: ','
+    when 'W3975S00183'
+      assign scene_position = 2
+      assign dimension_position = 7
+      assign detail_positions = '5,6' | split: ','
+      assign more_positions = '3,4' | split: ','
+    when 'W3975S00042'
+      assign scene_position = 3
+      assign dimension_position = 0
+      assign detail_positions = '2,4' | split: ','
+      assign more_positions = '5' | split: ','
+    when 'W5885P517229'
+      assign scene_position = 6
+      assign dimension_position = 2
+      assign detail_positions = '4,5' | split: ','
+      assign more_positions = '3,7,8' | split: ','
+  endcase
+%}
+<section class="tessilo-pdp-story page-width" id="ProductDetails">
+  <nav class="tessilo-pdp-nav" aria-label="Product information"><a href="#MainProduct-{{ section.id | split: '__' | first }}__main">Overview</a><a href="#ProductDetails">In your room</a><a href="#TessiloDimensions">Dimensions & fit</a><a href="{{ routes.root_url }}pages/contact">Ask a question</a></nav>
+  {% if scene_position > 0 %}
+    {% assign scene_index = scene_position | minus: 1 %}{% assign scene = product.media[scene_index] %}
+    <div class="tessilo-pdp-editorial"><div><h2>A place in your everyday.</h2><p>A room for conversation. A pause between plans. Find a place for {{ product.title | split: ' — ' | first | downcase | escape }} in the way you live.</p><a class="tessilo-text-link" href="#TessiloDimensions">Consider the fit {{ 'icon-arrow.svg' | inline_asset_content }}</a></div><a class="tessilo-pdp-editorial__image" href="{{ scene | image_url: width: 2400 }}" data-tessilo-enlarge aria-label="Enlarge room photograph">{{ scene | image_url: width: 900 | image_tag: widths: '400, 600, 900', sizes: '(min-width: 750px) 40vw, 100vw', loading: 'lazy' }}</a></div>
+  {% endif %}
+  <section class="tessilo-pdp-closeups" aria-labelledby="CloseupTitle-{{ section.id }}"><header><h2 id="CloseupTitle-{{ section.id }}">A closer look.</h2><p>See the shape, surface and details in the supplied photography. Select any image to inspect it at full size.</p></header><div class="tessilo-pdp-closeups__grid">
+    {% for position in detail_positions %}{% assign media_index = position | plus: 0 | minus: 1 %}{% assign media = product.media[media_index] %}{% if media.media_type == 'image' %}
+      <a href="{{ media | image_url: width: 2400 }}" data-tessilo-enlarge class="tessilo-pdp-closeup" aria-label="Enlarge product detail {{ forloop.index }}">{{ media | image_url: width: 700 | image_tag: widths: '300, 500, 700', sizes: '(min-width: 750px) 25vw, 45vw', loading: 'lazy' }}<span>View detail {{ forloop.index }} <span aria-hidden="true">↗</span></span></a>
+    {% endif %}{% endfor %}
+  </div></section>
+  <section class="tessilo-pdp-dimensions" id="TessiloDimensions"><div><h2>Will it feel right<br>in your room?</h2><p>Start with the footprint, then check the space around it. Keep the original dimension drawing close as you measure.</p><p class="tessilo-pdp-reference">Reference: {{ product.selected_or_first_available_variant.sku | escape }}</p><a class="tessilo-text-link" href="{{ routes.root_url }}pages/contact">Ask us to confirm a measurement</a></div><div>
+    {% if dimension_position > 0 %}{% assign dimension_index = dimension_position | minus: 1 %}{% assign dimension = product.media[dimension_index] %}
+      <a class="tessilo-pdp-dimension-image" href="{{ dimension | image_url: width: 2400 }}" data-tessilo-enlarge aria-label="Enlarge complete dimension drawing">{{ dimension | image_url: width: 1000 | image_tag: widths: '400, 700, 1000', sizes: '(min-width: 750px) 40vw, 100vw', loading: 'lazy' }}<span>View full-size dimension drawing ↗</span></a><p class="tessilo-pdp-dimension-note">Original supplier drawing. Please confirm any unclear or conflicting measurement with us before ordering.</p>
+    {% else %}<p>There is no dimension drawing in the supplied images for this piece. Please request confirmed measurements before ordering.</p>{% endif %}
+  </div></section>
+  <details class="tessilo-pdp-more"><summary>More views of this piece <span>Open image collection</span></summary><div class="tessilo-pdp-more__grid">
+    {% for media in product.media offset: 1 %}{% assign position = forloop.index | plus: 1 | append: '' %}{% if more_positions contains position or scene_position == 0 %}{% if media.media_type == 'image' %}<a href="{{ media | image_url: width: 2400 }}" data-tessilo-enlarge aria-label="Enlarge additional product image {{ position }}">{{ media | image_url: width: 600 | image_tag: loading: 'lazy' }}</a>{% endif %}{% endif %}{% endfor %}
+  </div></details>
+  <div class="tessilo-fit-guide" id="FitGuide">
+    <div><h2>A little planning.<br>A better fit.</h2><p>Check the product dimensions and your room before placing an order. Need help with a particular configuration? Talk to us first.</p><a class="tessilo-text-link" href="{{ routes.root_url }}pages/contact">Ask about this piece</a><p class="tessilo-pdp-reference">Reference: {{ product.selected_or_first_available_variant.sku | escape }}</p></div>
+    <div class="tessilo-guide-questions">
+      <details open><summary>Measure the room</summary><p>Mark out the footprint on the floor, including any chaise or ottoman. Leave room for doors to open and for people to walk around the seating.</p></details>
+      <details><summary>Check the route inside</summary><p>Measure doorways, hallways, stair turns and lift openings. Ask us to confirm packed dimensions if these are not shown in the product information.</p></details>
+      <details><summary>Discuss a custom request</summary><p>Send us the product reference, your room measurements and the configuration or finish you have in mind. Available options, pricing and lead time must be confirmed before ordering.</p></details>
+      <details><summary>Delivery and returns</summary><p>Delivery availability, charges and return conditions depend on your order and destination. Please confirm these with our team before purchase if they are not shown at checkout.</p></details>
+    </div>
+  </div>
+</section>
+<div class="tessilo-pdp-dock"><div><span>{{ product.title | split: ' — ' | first | escape }}</span><strong>{{ product.price | money_with_currency }}</strong></div><a href="#ProductInfo-{{ section.id | split: '__' | first }}__main">{% if product.available %}Choose options{% else %}View availability{% endif %}</a></div>
+{% schema %}{"name":"Tessilo product details","settings":[],"presets":[{"name":"Tessilo product details"}]}{% endschema %}

@@ -1,0 +1,5 @@
+<section class="tessilo-shop-intro page-width">
+  <div><h1>{% if collection.handle == 'all' %}Find your place to unwind.{% else %}{{ collection.title | escape }}{% endif %}</h1><p>Pieces for the moments that make a home. Find your shape, your texture, your favourite place to be.</p></div>
+  <nav aria-label="Shop by room"><a href="{{ routes.all_products_collection_url }}?view=living-room">Gather together</a><a href="{{ routes.all_products_collection_url }}?view=reading-corner">A quiet corner</a><a href="{{ routes.all_products_collection_url }}?view=time-to-unwind">Stretch out</a></nav>
+</section>
+{% schema %}{"name":"Tessilo shop introduction","settings":[],"presets":[{"name":"Tessilo shop introduction"}]}{% endschema %}

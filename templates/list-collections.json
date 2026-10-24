@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "scenes": {
+      "type": "tessilo-scene-portals",
+      "settings": {},
+      "blocks": {
+        "together": {
+          "type": "scene",
+          "settings": {
+            "product": "tessilo-w3975s00042",
+            "heading": "The room we come back to.",
+            "label": "Living room",
+            "description": "For conversations that run late and evenings with everyone together.",
+            "view": "living-room"
+          }
+        },
+        "reading": {
+          "type": "scene",
+          "settings": {
+            "product": "tessilo-w3975p530974",
+            "heading": "A corner of your own.",
+            "label": "Reading corner",
+            "description": "A comfortable chair. A little daylight. Some time that is just yours.",
+            "view": "reading-corner"
+          }
+        },
+        "relax": {
+          "type": "scene",
+          "settings": {
+            "product": "tessilo-w3975s00121",
+            "heading": "Let the day slow down.",
+            "label": "Time to unwind",
+            "description": "Lounge seating and room to stretch out when the day is done.",
+            "view": "time-to-unwind"
+          }
+        }
+      },
+      "block_order": [
+        "together",
+        "reading",
+        "relax"
+      ]
+    },
+    "consultation": {
+      "type": "tessilo-brand-world",
+      "settings": {
+        "layout": "consultation"
+      }
+    }
+  },
+  "order": [
+    "scenes",
+    "consultation"
+  ]
+}
