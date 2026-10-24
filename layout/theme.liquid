@@ -407,5 +407,6 @@
 <script src="{{ 'tessilo-rfq.js' | asset_url }}" type="module"></script>
     <script src="{{ 'tessilo-grow-rfq.js' | asset_url }}" type="module"></script>
   <script src="{{ 'tessilo-campaign.js' | asset_url }}" defer></script>
+  {% unless request.design_mode %}<script src="{{ 'tessilo-analytics.js' | asset_url }}" defer></script>{% endunless %}
   </body>
 </html>
